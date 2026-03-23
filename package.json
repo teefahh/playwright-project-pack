@@ -7,7 +7,7 @@
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
     "test:ui": "playwright test --ui",
-    "test:chronium": "playwright test --project= chronium",
+    "test:chromium": "playwright test --project= chromium",
     "test:firefox": "playwright test --project= firefox",
     "test:webkit": "playwright test --project= webkit",
     "test:mobile": "playwright test --project= mobile Chrome",
