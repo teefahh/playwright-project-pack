@@ -74,9 +74,9 @@ Project Structure:
 
 This framework follows the Page Object Model (POM) to improve:
 
-Maintainability: Changes to UI elements are handled in one place
-Reusability: Common actions are reused across multiple tests
-Scalability: Easy to extend with more pages and test scenarios
+- **Maintainability** →  Changes to UI elements are handled in one place
+- **Reusability** →  Common actions are reused across multiple tests
+- **Scalability** →  Easy to extend with more pages and test scenarios
 
 Page classes handle UI interactions, while test files focus on validations and assertions, ensuring clear separation of concerns.
 
