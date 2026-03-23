@@ -80,11 +80,11 @@ This framework follows the Page Object Model (POM) to improve:
 
 Page classes handle UI interactions, while test files focus on validations and assertions, ensuring clear separation of concerns.
 
-📌 Future Improvements
-Add Cart and Checkout page automation
-Integrate API testing alongside UI automation
-Implement CI/CD pipeline (e.g., GitHub Actions)
-Add reporting (Allure / HTML reports)
+## 📌 Future Improvements
+- Add Cart and Checkout page automation  
+- Integrate API testing alongside UI automation  
+- Implement CI/CD pipeline (e.g., GitHub Actions)  
+- Add reporting (Allure / HTML reports)  
 
 ## Author:
 Latifat Tobby Yisa
