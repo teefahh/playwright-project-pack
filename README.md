@@ -25,7 +25,7 @@ Install dependencies:
   
 Set up environment variables:
 ```bash
-  cp .env.example .env
+  cp .env.example.env
 ````
 
 Install Playwright browsers:
