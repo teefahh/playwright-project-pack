@@ -15,10 +15,10 @@ test ('Login with environment variables', async ({ page }) => {
 
 }); */
 
-import { test, expect } from '@playwright/test';
+//import { test, expect } from '@playwright/test';
 import { SauceDemoUsers } from '../utils/test-data';
 
-test ('Login with test data helper', async ({page}) => {
+/*test ('Login with test data helper', async ({page}) => {
 
     await page.goto('https://www.saucedemo.com');
 

@@ -3,7 +3,7 @@ import {Page, Locator} from '@playwright/test';
 export class ProductsPage {
 
     readonly page: Page;
-    readonly PageTitle: Locator;
+    readonly pageTitle: Locator;
     readonly inventoryItems: Locator;
     readonly shoppingCartBadge: Locator;
     readonly shoppingCartLink: Locator;
@@ -12,16 +12,16 @@ export class ProductsPage {
 
     constructor (page:Page) {
         this.page = page;
-        this.PageTitle = page.locator('.title');
+        this.pageTitle = page.locator('.title');
         this.inventoryItems = page.locator('.inventory_item');
         this.shoppingCartBadge = page.locator('.shopping_cart_badge');
         this.shoppingCartLink = page.locator('.shopping_cart_link');
-        this.sortDropdown = page.locator('[data-test= "product_sort_container"]');
+        this.sortDropdown = page.locator('[data-test="product-sort-container"]');
     }
 
     async goto() {
 
-        await this.page.goto('https://saucedemo.com/inventory.html');
+        await this.page.goto('https://www.saucedemo.com/inventory.html');
 
     }
     async getProductCount(): Promise<number> {

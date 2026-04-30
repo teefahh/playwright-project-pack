@@ -10,20 +10,19 @@ test.describe ('SauceDemo Login Tests', () => {
     await loginPage.login('standard_user', 'secret_sauce');
 
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
-    await expect(page.locator('title')).toHaveText('Products');
+    await expect(page.locator('[data-test="title"]')).toHaveText('Products');
     });
 
     test ('Login fails with invalid credentials', async ({page}) => {
         const loginPage = new LoginPage(page);
 
         await loginPage.goto();
-        await loginPage.login('Invalid_user', 'wrong_password');
+        await loginPage.login('invalid_user', 'wrong_password');
 
-        const isErrorVisible = await loginPage.isErrorVisible();
-        expect(isErrorVisible).toBeTruthy();
+        await expect(page.locator('[data-test="error"]')).toBeVisible();
 
         const errorText = await loginPage.getErrorMessage();
-        expect (errorText).toContain('Username and Password do not match');
+        expect(errorText).toContain('Username and password do not match');
     });
 
     test ('Login fails with locked out user', async ({page}) => {
@@ -32,8 +31,8 @@ test.describe ('SauceDemo Login Tests', () => {
         await loginPage.goto();
         await loginPage.login('locked_out_user', 'secret_sauce');
 
-        const errorText = await loginPage.getErrorMessage();
-        expect(errorText).toContain ('Sorry, this user has been locked out');
+        await expect(page.locator('[data-test="error"]')) 
+            .toContainText('Sorry, this user has been locked out');
     });
 
     test ('can clear error message', async ({page}) => {
