@@ -7,29 +7,9 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
-
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-
-// Determine which site to test based on environment variable
-/**const getBaseURL = () => {
-  const site = (process.env.TEST_SITE || 'saucedemo') as keyof typeof urls;
-  onst urls = {
-    saucedemo: 'https://www.saucedemo.com',
-    todomvc: 'https://demo.playwright.dev/todomvc',
-    automationexercise: 'https://automationexercise.com',
-    theinternet: 'https://the-internet.herokuapp.com'
-  };
-  return urls[site] || urls.saucedemo;
-  
-};
-**/
-
-
 
 export default defineConfig({
   testDir: './tests',

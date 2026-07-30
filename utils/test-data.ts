@@ -11,7 +11,7 @@ export const SauceDemoUsers = {
 
     locked: {
 
-        usermane: process.env.SAUCEDEMO_LOCKED_USER || 'locked_out_user',
+        username: process.env.SAUCEDEMO_LOCKED_USER || 'locked_out_user',
         password: process.env.SAUCEDEMO_PASSWORD || 'secret_sauce'
     },
 
@@ -25,14 +25,14 @@ export const SauceDemoUsers = {
 
 
 export const TestURLS = {
-    sauceDemo: process.env.SAUCEDEMO_BASE_URL || 'https://saucedemo.com',
-    todoMVC: process.env.TODOMVC_BASE_URL || 'https//demo.playwright.dev/todomvc',
-    theInternet: 'https//the-internet.erokuapp.com'
+    sauceDemo: process.env.SAUCEDEMO_BASE_URL || 'https://www.saucedemo.com',
+    todoMVC: process.env.TODOMVC_BASE_URL || 'https://demo.playwright.dev/todomvc',
+    theInternet: 'https://the-internet.herokuapp.com'
 };
 
 export const APIEndpoints = {
 
     jsonPlaceholder: process.env.JSONPLACEHOLDER_API || 'https://jsonplaceholder.typicode.com',
     fakeStoreAPI: process.env.FAKESTOREAPI_URL || 'https://fakestoreapi.com',
-    reqres: process.env.REQRES_API || 'https://reqres.in//api'
+    reqres: process.env.REQRES_API || 'https://reqres.in/api'
 };

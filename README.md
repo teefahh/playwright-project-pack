@@ -1,90 +1,103 @@
-# Playwright Automation Project (POM Implementation)
+# SauceDemo Playwright Framework
 
-This project demonstrates my hands-on practice building a Playwright automation framework using the Page Object Model (POM) design pattern. It focuses on writing maintainable, reusable, and scalable UI automation tests using Playwright.
+[![Playwright Tests](https://github.com/teefahh/saucedemo-playwright-framework/actions/workflows/playwright.yml/badge.svg)](https://github.com/teefahh/saucedemo-playwright-framework/actions/workflows/playwright.yml)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+An end-to-end UI test automation framework for [SauceDemo](https://www.saucedemo.com), built with **Playwright** and **TypeScript** using the **Page Object Model (POM)** design pattern. Covers the full purchase flow: login, product browsing, cart, and checkout.
 
 ## Key Highlights
-- Implemented Page Object Model (POM) for login and product pages
-- Created reusable locators and methods for UI interactions
-- Structured tests to separate test logic from page interactions
-- Automated core scenarios such as login and product validation
-- Practiced clean and maintainable automation structure
+- Page Object Model for Login, Products, Cart, and Checkout pages
+- End-to-end checkout flow coverage, from login through order confirmation
+- Cross-browser test execution (Chromium, Firefox, WebKit)
+- Continuous integration via GitHub Actions on every push and pull request
+- Centralized test data and environment-driven configuration
 
 ## Tech Stack
-- Playwright
+- [Playwright](https://playwright.dev)
 - TypeScript
 - Node.js
+- GitHub Actions (CI)
 
-## Setup and Running Tests
-
-Install dependencies:
-```bash
-  npm install
-  cp .env.example .env
-  npx playwright install
-  ````
-  
-Set up environment variables:
-```bash
-  cp .env.example.env
-````
-
-Install Playwright browsers:
-```bash
-  npx playwright install
-````
-
-Run all tests:
-```bash
-  npm test
-````
-
-Run in specific test suite:
-```bash
-  npm run test:saucedemo
+## Project Structure
+```
+saucedemo-playwright-framework/
+├── .github/workflows/
+│   └── playwright.yml          # CI pipeline
+├── page-objects/saucedemo/
+│   ├── LoginPage.ts
+│   ├── ProductsPage.ts
+│   ├── CartPage.ts
+│   └── CheckOutPage.ts
+├── tests/
+│   ├── saucedemo-login.spec.ts
+│   ├── saucedemo-products.spec.ts
+│   └── saucedemo-checkout.spec.ts
+├── utils/
+│   └── test-data.ts            # Shared test users, URLs, and API endpoints
+├── playwright.config.ts
+└── package.json
 ```
 
-Run on specific browsers:
+## Getting Started
+
+Install dependencies and browsers:
 ```bash
-  npm run test:chromium
-  npm run test:firefox
-```
-Run in headed mode:
-```bash
-  npm run test:headed
+npm install
+npx playwright install
 ```
 
-Project Structure:
+Run the full suite:
 ```bash
-    Playwright_Practice/
-  ├── pages/
-  │   ├── LoginPage.ts
-  │   └── ProductsPage.ts
-  ├── tests/
-  │   ├── login.spec.ts
-  │   └── products.spec.ts
-  ├── utils/
-  ├── test-data/
-  ├── .env.example
-  ├── playwright.config.ts
-  ├── package.json
-  └── README.md
+npm test
+```
+
+Run a specific browser:
+```bash
+npm run test:chromium
+npm run test:firefox
+npm run test:webkit
+```
+
+Run in headed mode (visible browser):
+```bash
+npm run test:headed
+```
+
+Run with Playwright's UI mode or debugger:
+```bash
+npm run test:ui
+npm run test:debug
+```
+
+View the last HTML report:
+```bash
+npm run report
 ```
 
 ## Design Approach
 
-This framework follows the Page Object Model (POM) to improve:
+The framework follows the Page Object Model to separate test logic from page interaction:
 
-- **Maintainability** →  Changes to UI elements are handled in one place
-- **Reusability** →  Common actions are reused across multiple tests
-- **Scalability** →  Easy to extend with more pages and test scenarios
+- **Maintainability** — UI element changes are isolated to a single page object
+- **Reusability** — Common actions and locators are shared across tests
+- **Scalability** — New pages and scenarios extend the same pattern
 
-Page classes handle UI interactions, while test files focus on validations and assertions, ensuring clear separation of concerns.
+Page objects own locators and UI actions; spec files own assertions and test flow.
 
-## 📌 Future Improvements
-- Add Cart and Checkout page automation  
-- Integrate API testing alongside UI automation  
-- Implement CI/CD pipeline (e.g., GitHub Actions)  
-- Add reporting (Allure / HTML reports)  
+## Continuous Integration
 
-## Author:
-Latifat Tobby Yisa
+Every push and pull request to `main` runs the full suite headlessly via [GitHub Actions](.github/workflows/playwright.yml), with the HTML report uploaded as a build artifact.
+
+## Future Improvements
+- API testing alongside UI automation
+- Allure/HTML reporting integration
+- Data-driven test scenarios via `utils/test-data.ts`
+
+## Author
+**Latifat Yisa**
+[GitHub](https://github.com/teefahh) · latifat.yisa@gmail.com
+
+## License
+[MIT](LICENSE)
